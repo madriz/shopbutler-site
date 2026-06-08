@@ -29,24 +29,29 @@
   .green{color:var(--green)} .serif{font-family:var(--serif)}
   em{font-style:italic}
 
-  nav{position:fixed; top:0; left:0; right:0; z-index:50; height:64px; background:rgba(255,255,255,.82); backdrop-filter:blur(20px); border-bottom:1px solid var(--border)}
+  nav{position:fixed; top:0; left:0; right:0; z-index:50; height:74px; background:rgba(255,255,255,.82); backdrop-filter:blur(20px); border-bottom:1px solid var(--border)}
   nav .wrap{height:100%; display:flex; align-items:center; justify-content:space-between}
-  .brand{display:flex; align-items:center; gap:10px; font-family:var(--sans); font-size:19px; font-weight:600; letter-spacing:-.01em}
-  .brand img{height:30px; width:auto; display:block}
+  .brand{display:flex; align-items:center; gap:11px; font-family:var(--sans); text-decoration:none}
+  .brand img{height:40px; width:auto; display:block}
+  .brand-text{display:flex; flex-direction:column; justify-content:center}
+  .wordmark{font-size:19px; font-weight:600; letter-spacing:-.01em; line-height:1.05}
+  .wordmark{font-size:19px; font-weight:600; letter-spacing:-.01em; line-height:1.05; white-space:nowrap}
   .brand .b-shop{color:var(--green)} .brand .b-rest{color:var(--white)}
+  .tagline{font-size:9.5px; font-weight:400; color:var(--text-muted); letter-spacing:.015em; line-height:1.2; margin-top:2px; white-space:nowrap}
   .navlinks{display:flex; gap:36px; font-size:13px; letter-spacing:.03em; color:var(--text-secondary); font-weight:400}
   .navlinks a:hover{color:var(--text-primary)}
-  .hamburger{display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:6px}
+  .hamburger{display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:6px; align-self:center}
   .hamburger span{display:block; width:24px; height:2px; background:var(--green); transition:transform .25s, opacity .2s}
   .hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
   .hamburger.active span:nth-child(2){opacity:0}
   .hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-  .mobile-menu{display:none; position:fixed; top:64px; left:0; right:0; z-index:49; background:rgba(255,255,255,.98); backdrop-filter:blur(20px); border-bottom:1px solid var(--border); flex-direction:column; padding:8px 0}
+  .mobile-menu{display:none; position:fixed; top:74px; left:0; right:0; z-index:49; background:rgba(255,255,255,.98); backdrop-filter:blur(20px); border-bottom:1px solid var(--border); flex-direction:column; padding:8px 0}
   .mobile-menu.open{display:flex}
   .mobile-menu a{padding:15px 24px; font-size:15px; color:var(--text-secondary); border-top:1px solid var(--border)}
   .mobile-menu a:first-child{border-top:none}
   .mobile-menu a:hover{color:var(--text-primary)}
   @media(max-width:760px){.navlinks{display:none} .hamburger{display:flex}}
+  @media(max-width:380px){.tagline{display:none}}
 
   header{padding:160px 0 96px; position:relative; overflow:hidden}
   header::before{content:""; position:absolute; inset:0; z-index:0;
@@ -146,7 +151,7 @@
 
 <nav>
   <div class="wrap">
-    <a href="#" class="brand"><img src="logo.png" alt="ShopButler logo"><span><span class="b-shop">shop</span><span class="b-rest">butler.ai</span></span></a>
+    <a href="#" class="brand"><img src="logo.png" alt="ShopButler logo"><span class="brand-text"><span class="wordmark"><span class="b-shop">shop</span><span class="b-rest">butler.ai</span></span><span class="tagline">A 5-star concierge that saves you money</span></span></a>
     <div class="navlinks">
       <a href="#problem">The problem</a>
       <a href="#apps">Applications</a>
@@ -171,7 +176,7 @@
     <div class="h-meta rv d3">
       <div><span class="k">One engine</span><span class="l">Three applications</span></div>
       <div><span class="k">Zero</span><span class="l">Merchant placement fees</span></div>
-      <div><span class="k">Provable</span><span class="l">Neutrality by design</span></div>
+      <div><span class="k">Verifiable</span><span class="l">Neutrality by design</span></div>
     </div>
   </div>
 </header>
